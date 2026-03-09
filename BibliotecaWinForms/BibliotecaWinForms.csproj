@@ -59,6 +59,7 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Libros.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBiblioteca.resx">
@@ -91,7 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Datos\" />
-    <Folder Include="Modelos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
