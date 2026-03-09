@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace BibliotecaWinForms
 {
-    public partial class Form1 : Form
+    public partial class FormUsuarios : Form
     {
-        public Form1()
+        public FormUsuarios()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
