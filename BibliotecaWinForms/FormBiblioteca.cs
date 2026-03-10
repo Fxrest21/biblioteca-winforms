@@ -14,6 +14,7 @@ namespace BibliotecaWinForms
 {
     public partial class FormBiblioteca : Form
     {
+        int indiceSeleccionado = -1;
         public FormBiblioteca()
         {
             InitializeComponent();
@@ -70,14 +71,38 @@ namespace BibliotecaWinForms
 
         private void dgvLibros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int fila = e.RowIndex;
+            if (e.RowIndex < 0) return;
 
-            if (fila >= 0)
+            indiceSeleccionado = e.RowIndex;
+
+            txtTitulo.Text = DatosBiblioteca.libros[indiceSeleccionado].Titulo;
+            txtAutor.Text = DatosBiblioteca.libros[indiceSeleccionado].Autor;
+            txtAnio.Text = DatosBiblioteca.libros[indiceSeleccionado].Anio.ToString();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (indiceSeleccionado == -1)
             {
-                txtTitulo.Text = DatosBiblioteca.libros[fila].Titulo;
-                txtAutor.Text = DatosBiblioteca.libros[fila].Autor;
-                txtAnio.Text = DatosBiblioteca.libros[fila].Anio.ToString();
+                MessageBox.Show("Seleccione un libro");
+                return;
             }
+
+            int anio;
+
+            if (!int.TryParse(txtAnio.Text, out anio))
+            {
+                MessageBox.Show("El año debe ser numérico");
+                return;
+            }
+
+            DatosBiblioteca.libros[indiceSeleccionado].Titulo = txtTitulo.Text;
+            DatosBiblioteca.libros[indiceSeleccionado].Autor = txtAutor.Text;
+            DatosBiblioteca.libros[indiceSeleccionado].Anio = anio;
+
+            MostrarLibros();
+
+            MessageBox.Show("Libro editado correctamente");
         }
 
         private void dgvLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
