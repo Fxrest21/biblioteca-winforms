@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BibliotecaWinForms.Modelos;
 
 namespace BibliotecaWinForms
 {
@@ -40,7 +41,19 @@ namespace BibliotecaWinForms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            string titulo = txtTitulo.Text;
+            string autor = txtAutor.Text;
+            int anio = int.Parse(txtAnio.Text);
 
+    
+            int nuevoId = DatosBiblioteca.contadorLibros + 1; 
+
+    Libro nuevo = new Libro(nuevoId, titulo, autor, anio);
+
+    DatosBiblioteca.libros[DatosBiblioteca.contadorLibros] = nuevo;
+    DatosBiblioteca.contadorLibros++;
+
+    MostrarLibros();
         }
     }
 }

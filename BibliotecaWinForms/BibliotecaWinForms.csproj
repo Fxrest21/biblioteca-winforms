@@ -60,7 +60,7 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\Libros.cs" />
+    <Compile Include="Modelos\Libro.cs" />
     <Compile Include="Modelos\Prestamo.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Program.cs" />

@@ -13,7 +13,7 @@ namespace BibliotecaWinForms.Modelos
         public int IdUsuario { get; set; }
         public DateTime FechaPrestamo { get; set; }
 
-        public Prestamo(int id, int libro, int usuario
+        public Prestamo(int id, int libro, int usuario)
             {
             Id = id;
             IdLibro = libro;
