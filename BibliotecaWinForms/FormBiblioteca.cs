@@ -18,6 +18,19 @@ namespace BibliotecaWinForms
         public FormBiblioteca()
         {
             InitializeComponent();
+
+            
+            btnEditar.Click += btnEditar_Click;
+            dgvLibros.CellClick += dgvLibros_CellClick;
+            dgvLibros.CellContentClick += dgvLibros_CellContentClick;
+
+           
+            dgvLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLibros.MultiSelect = false;
+            dgvLibros.AllowUserToAddRows = false;
+            dgvLibros.ReadOnly = true;
+
+            dgvLibros.ClearSelection();
         }
 
         public void MostrarLibros()
@@ -33,6 +46,9 @@ namespace BibliotecaWinForms
                     DatosBiblioteca.libros[i].VecesPrestado
                 );
             }
+
+            indiceSeleccionado = -1;
+            dgvLibros.ClearSelection();
         }
 
         private void FormBiblioteca_Load(object sender, EventArgs e)
@@ -75,16 +91,25 @@ namespace BibliotecaWinForms
 
             indiceSeleccionado = e.RowIndex;
 
-            txtTitulo.Text = DatosBiblioteca.libros[indiceSeleccionado].Titulo;
-            txtAutor.Text = DatosBiblioteca.libros[indiceSeleccionado].Autor;
-            txtAnio.Text = DatosBiblioteca.libros[indiceSeleccionado].Anio.ToString();
+            if (indiceSeleccionado >= 0 && indiceSeleccionado < DatosBiblioteca.contadorLibros &&
+                DatosBiblioteca.libros[indiceSeleccionado] != null)
+            {
+                txtTitulo.Text = DatosBiblioteca.libros[indiceSeleccionado].Titulo;
+                txtAutor.Text = DatosBiblioteca.libros[indiceSeleccionado].Autor;
+                txtAnio.Text = DatosBiblioteca.libros[indiceSeleccionado].Anio.ToString();
+            }
+            else
+            {
+                indiceSeleccionado = -1;
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (indiceSeleccionado == -1)
+            if (indiceSeleccionado < 0 || indiceSeleccionado >= DatosBiblioteca.contadorLibros ||
+                DatosBiblioteca.libros[indiceSeleccionado] == null)
             {
-                MessageBox.Show("Seleccione un libro");
+                MessageBox.Show("Seleccione un libro de la tabla");
                 return;
             }
 
@@ -107,7 +132,7 @@ namespace BibliotecaWinForms
 
         private void dgvLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            dgvLibros_CellClick(sender, e);
         }
     }
 }
