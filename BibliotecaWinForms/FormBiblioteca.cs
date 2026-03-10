@@ -21,6 +21,7 @@ namespace BibliotecaWinForms
 
             btnEditar.Click += btnEditar_Click;
             btnEliminar.Click += btnEliminar_Click;
+            btnPrestamo.Click += btnPrestamo_Click; 
             dgvLibros.CellClick += dgvLibros_CellClick;
             dgvLibros.CellContentClick += dgvLibros_CellContentClick;
 
@@ -135,6 +136,30 @@ namespace BibliotecaWinForms
             return -1;
         }
 
+        private void btnPrestamo_Click(object sender, EventArgs e)
+        {
+            int idx = ObtenerIndiceSeleccionadoSeguro();
+
+            if (idx < 0 || DatosBiblioteca.libros[idx] == null)
+            {
+                MessageBox.Show("Seleccione un libro");
+                return;
+            }
+
+            DatosBiblioteca.libros[idx].VecesPrestado++;
+
+            MostrarLibros();
+
+            if (idx >= 0 && idx < dgvLibros.Rows.Count)
+            {
+                dgvLibros.ClearSelection();
+                dgvLibros.Rows[idx].Selected = true;
+                indiceSeleccionado = idx;
+            }
+
+            MessageBox.Show("Préstamo registrado");
+        }
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int idx = ObtenerIndiceSeleccionadoSeguro();
@@ -161,6 +186,7 @@ namespace BibliotecaWinForms
             if (idx >= 0 && idx < dgvLibros.Rows.Count)
             {
                 dgvLibros.Rows[idx].Selected = true;
+                indiceSeleccionado = idx;
             }
 
             MessageBox.Show("Libro editado correctamente");

@@ -51,6 +51,7 @@
             this.colAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAnio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrestamos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnOpenForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLibros)).BeginInit();
             this.SuspendLayout();
@@ -230,11 +231,22 @@
             this.colPrestamos.Name = "colPrestamos";
             this.colPrestamos.Width = 150;
             // 
+            // btnOpenForm
+            // 
+            this.btnOpenForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnOpenForm.Location = new System.Drawing.Point(794, 550);
+            this.btnOpenForm.Name = "btnOpenForm";
+            this.btnOpenForm.Size = new System.Drawing.Size(272, 90);
+            this.btnOpenForm.TabIndex = 16;
+            this.btnOpenForm.Text = "Gestionar usuarios";
+            this.btnOpenForm.UseVisualStyleBackColor = true;
+            // 
             // FormBiblioteca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1169, 784);
+            this.Controls.Add(this.btnOpenForm);
             this.Controls.Add(this.chartLibros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLibros);
@@ -279,6 +291,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAnio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrestamos;
+        private System.Windows.Forms.Button btnOpenForm;
     }
 }
 
