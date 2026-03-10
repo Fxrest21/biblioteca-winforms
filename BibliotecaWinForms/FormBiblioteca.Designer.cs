@@ -173,7 +173,7 @@
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.RowHeadersWidth = 62;
             this.dgvLibros.RowTemplate.Height = 28;
-            this.dgvLibros.Size = new System.Drawing.Size(625, 243);
+            this.dgvLibros.Size = new System.Drawing.Size(647, 351);
             this.dgvLibros.TabIndex = 13;
             this.dgvLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellContentClick);
             // 
@@ -181,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(722, 100);
+            this.label1.Location = new System.Drawing.Point(816, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(401, 46);
             this.label1.TabIndex = 14;
@@ -193,13 +193,13 @@
             this.chartLibros.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartLibros.Legends.Add(legend1);
-            this.chartLibros.Location = new System.Drawing.Point(716, 163);
+            this.chartLibros.Location = new System.Drawing.Point(734, 152);
             this.chartLibros.Name = "chartLibros";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartLibros.Series.Add(series1);
-            this.chartLibros.Size = new System.Drawing.Size(427, 250);
+            this.chartLibros.Size = new System.Drawing.Size(658, 360);
             this.chartLibros.TabIndex = 15;
             this.chartLibros.Text = "chart1";
             // 
@@ -234,9 +234,9 @@
             // btnOpenForm
             // 
             this.btnOpenForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnOpenForm.Location = new System.Drawing.Point(794, 550);
+            this.btnOpenForm.Location = new System.Drawing.Point(884, 580);
             this.btnOpenForm.Name = "btnOpenForm";
-            this.btnOpenForm.Size = new System.Drawing.Size(272, 90);
+            this.btnOpenForm.Size = new System.Drawing.Size(294, 115);
             this.btnOpenForm.TabIndex = 16;
             this.btnOpenForm.Text = "Gestionar usuarios";
             this.btnOpenForm.UseVisualStyleBackColor = true;
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 784);
+            this.ClientSize = new System.Drawing.Size(1416, 784);
             this.Controls.Add(this.btnOpenForm);
             this.Controls.Add(this.chartLibros);
             this.Controls.Add(this.label1);
