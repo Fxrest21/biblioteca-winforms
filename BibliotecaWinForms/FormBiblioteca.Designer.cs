@@ -56,7 +56,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // lblIntro
             // 
@@ -67,7 +66,6 @@
             this.lblIntro.Size = new System.Drawing.Size(399, 46);
             this.lblIntro.TabIndex = 2;
             this.lblIntro.Text = "Gestion de Biblioteca";
-            this.lblIntro.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbltitulo
             // 
@@ -128,6 +126,7 @@
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -175,7 +174,6 @@
             this.label1.Size = new System.Drawing.Size(401, 46);
             this.label1.TabIndex = 14;
             this.label1.Text = "Libros más prestados";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // chartLibros
             // 
@@ -214,6 +212,7 @@
             this.Controls.Add(this.lblIntro);
             this.Name = "FormBiblioteca";
             this.Text = "lblLibrosPrestados";
+            this.Load += new System.EventHandler(this.FormBiblioteca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLibros)).EndInit();
             this.ResumeLayout(false);
