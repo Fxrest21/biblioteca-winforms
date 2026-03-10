@@ -47,6 +47,10 @@
             this.dgvLibros = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.chartLibros = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAnio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrestamos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLibros)).BeginInit();
             this.SuspendLayout();
@@ -157,19 +161,26 @@
             // 
             // dgvLibros
             // 
+            this.dgvLibros.AllowUserToAddRows = false;
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTitulo,
+            this.colAutor,
+            this.colAnio,
+            this.colPrestamos});
             this.dgvLibros.Location = new System.Drawing.Point(43, 382);
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.RowHeadersWidth = 62;
             this.dgvLibros.RowTemplate.Height = 28;
-            this.dgvLibros.Size = new System.Drawing.Size(401, 243);
+            this.dgvLibros.Size = new System.Drawing.Size(625, 243);
             this.dgvLibros.TabIndex = 13;
+            this.dgvLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(543, 330);
+            this.label1.Location = new System.Drawing.Point(722, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(401, 46);
             this.label1.TabIndex = 14;
@@ -181,7 +192,7 @@
             this.chartLibros.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartLibros.Legends.Add(legend1);
-            this.chartLibros.Location = new System.Drawing.Point(529, 394);
+            this.chartLibros.Location = new System.Drawing.Point(716, 163);
             this.chartLibros.Name = "chartLibros";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -191,11 +202,39 @@
             this.chartLibros.TabIndex = 15;
             this.chartLibros.Text = "chart1";
             // 
+            // colTitulo
+            // 
+            this.colTitulo.HeaderText = "Título";
+            this.colTitulo.MinimumWidth = 8;
+            this.colTitulo.Name = "colTitulo";
+            this.colTitulo.Width = 150;
+            // 
+            // colAutor
+            // 
+            this.colAutor.HeaderText = "Autor";
+            this.colAutor.MinimumWidth = 8;
+            this.colAutor.Name = "colAutor";
+            this.colAutor.Width = 150;
+            // 
+            // colAnio
+            // 
+            this.colAnio.HeaderText = "Año";
+            this.colAnio.MinimumWidth = 8;
+            this.colAnio.Name = "colAnio";
+            this.colAnio.Width = 150;
+            // 
+            // colPrestamos
+            // 
+            this.colPrestamos.HeaderText = "Prestamos";
+            this.colPrestamos.MinimumWidth = 8;
+            this.colPrestamos.Name = "colPrestamos";
+            this.colPrestamos.Width = 150;
+            // 
             // FormBiblioteca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 768);
+            this.ClientSize = new System.Drawing.Size(1169, 784);
             this.Controls.Add(this.chartLibros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLibros);
@@ -236,6 +275,10 @@
         private System.Windows.Forms.DataGridView dgvLibros;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLibros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAnio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrestamos;
     }
 }
 

@@ -41,19 +41,48 @@ namespace BibliotecaWinForms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtTitulo.Text == "" || txtAutor.Text == "" || txtAnio.Text == "")
+            {
+                MessageBox.Show("Complete todos los campos");
+                return;
+            }
+
+            int anio;
+
+            if (!int.TryParse(txtAnio.Text, out anio))
+            {
+                MessageBox.Show("El año debe ser un número");
+                return;
+            }
+
             string titulo = txtTitulo.Text;
             string autor = txtAutor.Text;
-            int anio = int.Parse(txtAnio.Text);
 
-    
-            int nuevoId = DatosBiblioteca.contadorLibros + 1; 
+            int nuevoId = DatosBiblioteca.contadorLibros + 1;
 
-    Libro nuevo = new Libro(nuevoId, titulo, autor, anio);
+            Libro nuevo = new Libro(nuevoId, titulo, autor, anio);
 
-    DatosBiblioteca.libros[DatosBiblioteca.contadorLibros] = nuevo;
-    DatosBiblioteca.contadorLibros++;
+            DatosBiblioteca.libros[DatosBiblioteca.contadorLibros] = nuevo;
+            DatosBiblioteca.contadorLibros++;
 
-    MostrarLibros();
+            MostrarLibros();
+        }
+
+        private void dgvLibros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = e.RowIndex;
+
+            if (fila >= 0)
+            {
+                txtTitulo.Text = DatosBiblioteca.libros[fila].Titulo;
+                txtAutor.Text = DatosBiblioteca.libros[fila].Autor;
+                txtAnio.Text = DatosBiblioteca.libros[fila].Anio.ToString();
+            }
+        }
+
+        private void dgvLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
