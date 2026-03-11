@@ -60,6 +60,31 @@ namespace BibliotecaWinForms
             txtCarnet.Clear();
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (indiceSeleccionado < 0 || indiceSeleccionado >= DatosBiblioteca.contadorUsuarios)
+            {
+                MessageBox.Show("Seleccione un usuario para editar");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text))
+            {
+                MessageBox.Show("Complete los campos");
+                return;
+            }
+            Usuario usuario = DatosBiblioteca.usuarios[indiceSeleccionado];
+            usuario.Nombre = txtNombre.Text;
+            usuario.Carnet = txtCarnet.Text;
+
+            MostrarUsuarios();
+
+            txtNombre.Clear();
+            txtCarnet.Clear();
+            indiceSeleccionado = -1;
+            dgvUsuarios.ClearSelection();
+        }
+
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
