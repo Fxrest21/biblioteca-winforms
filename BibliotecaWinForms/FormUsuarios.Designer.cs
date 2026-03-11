@@ -42,6 +42,9 @@
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.chartUsuarios = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarnet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrestamos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -120,19 +123,24 @@
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colNombre,
+            this.colCarnet,
+            this.colPrestamos});
             this.dgvUsuarios.Location = new System.Drawing.Point(55, 313);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 62;
             this.dgvUsuarios.RowTemplate.Height = 28;
-            this.dgvUsuarios.Size = new System.Drawing.Size(326, 238);
+            this.dgvUsuarios.Size = new System.Drawing.Size(518, 238);
             this.dgvUsuarios.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(465, 212);
+            this.label1.Location = new System.Drawing.Point(626, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 46);
             this.label1.TabIndex = 9;
@@ -145,21 +153,42 @@
             this.chartUsuarios.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartUsuarios.Legends.Add(legend1);
-            this.chartUsuarios.Location = new System.Drawing.Point(437, 291);
+            this.chartUsuarios.Location = new System.Drawing.Point(612, 143);
             this.chartUsuarios.Name = "chartUsuarios";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartUsuarios.Series.Add(series1);
-            this.chartUsuarios.Size = new System.Drawing.Size(477, 260);
+            this.chartUsuarios.Size = new System.Drawing.Size(437, 276);
             this.chartUsuarios.TabIndex = 10;
             this.chartUsuarios.Text = "chart1";
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.MinimumWidth = 8;
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Width = 150;
+            // 
+            // colCarnet
+            // 
+            this.colCarnet.HeaderText = "Carnet";
+            this.colCarnet.MinimumWidth = 8;
+            this.colCarnet.Name = "colCarnet";
+            this.colCarnet.Width = 150;
+            // 
+            // colPrestamos
+            // 
+            this.colPrestamos.HeaderText = "Prestamos";
+            this.colPrestamos.MinimumWidth = 8;
+            this.colPrestamos.Name = "colPrestamos";
+            this.colPrestamos.Width = 150;
             // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 702);
+            this.ClientSize = new System.Drawing.Size(1090, 702);
             this.Controls.Add(this.chartUsuarios);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvUsuarios);
@@ -173,6 +202,7 @@
             this.Controls.Add(this.lblIntro);
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
+            this.Load += new System.EventHandler(this.FormUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -193,5 +223,8 @@
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCarnet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrestamos;
     }
 }
