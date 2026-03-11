@@ -45,12 +45,12 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnPrestamo = new System.Windows.Forms.Button();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chartLibros = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAnio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrestamos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chartLibros = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnOpenForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLibros)).BeginInit();
@@ -177,32 +177,6 @@
             this.dgvLibros.TabIndex = 13;
             this.dgvLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellContentClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(816, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(401, 46);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Libros más prestados";
-            // 
-            // chartLibros
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartLibros.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartLibros.Legends.Add(legend1);
-            this.chartLibros.Location = new System.Drawing.Point(734, 152);
-            this.chartLibros.Name = "chartLibros";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartLibros.Series.Add(series1);
-            this.chartLibros.Size = new System.Drawing.Size(658, 360);
-            this.chartLibros.TabIndex = 15;
-            this.chartLibros.Text = "chart1";
-            // 
             // colTitulo
             // 
             this.colTitulo.HeaderText = "Título";
@@ -231,6 +205,32 @@
             this.colPrestamos.Name = "colPrestamos";
             this.colPrestamos.Width = 150;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label1.Location = new System.Drawing.Point(816, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(401, 46);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Libros más prestados";
+            // 
+            // chartLibros
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartLibros.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartLibros.Legends.Add(legend1);
+            this.chartLibros.Location = new System.Drawing.Point(734, 152);
+            this.chartLibros.Name = "chartLibros";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartLibros.Series.Add(series1);
+            this.chartLibros.Size = new System.Drawing.Size(658, 360);
+            this.chartLibros.TabIndex = 15;
+            this.chartLibros.Text = "chart1";
+            // 
             // btnOpenForm
             // 
             this.btnOpenForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -240,6 +240,7 @@
             this.btnOpenForm.TabIndex = 16;
             this.btnOpenForm.Text = "Gestionar usuarios";
             this.btnOpenForm.UseVisualStyleBackColor = true;
+            this.btnOpenForm.Click += new System.EventHandler(this.btnOpenForm_Click);
             // 
             // FormBiblioteca
             // 
