@@ -1,4 +1,5 @@
 ﻿using BibliotecaWinForms.Datos;
+using BibliotecaWinForms.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,5 +33,42 @@ namespace BibliotecaWinForms
                 );
             }
         }
+        private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+            MostrarUsuarios();
+        }
+
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "" || txtCarnet.Text == "")
+            {
+                MessageBox.Show("Complete los campos");
+                return;
+            }
+
+            int id = DatosBiblioteca.contadorUsuarios + 1;
+
+            Usuario nuevo = new Usuario(id, txtNombre.Text, txtCarnet.Text);
+
+            DatosBiblioteca.usuarios[DatosBiblioteca.contadorUsuarios] = nuevo;
+
+            DatosBiblioteca.contadorUsuarios++;
+
+            MostrarUsuarios();
+
+            txtNombre.Clear();
+            txtCarnet.Clear();
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            indiceSeleccionado = e.RowIndex;
+
+            txtNombre.Text = DatosBiblioteca.usuarios[indiceSeleccionado].Nombre;
+            txtCarnet.Text = DatosBiblioteca.usuarios[indiceSeleccionado].Carnet;
+        }
+
     }
 }

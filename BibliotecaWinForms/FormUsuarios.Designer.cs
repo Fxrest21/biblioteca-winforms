@@ -1,4 +1,4 @@
-﻿namespace BibliotecaWinForms
+﻿    namespace BibliotecaWinForms
 {
     partial class FormUsuarios
     {
@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblIntro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCarnet = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCarnet = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chartUsuarios = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarnet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrestamos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chartUsuarios = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -93,14 +93,15 @@
             this.txtCarnet.Size = new System.Drawing.Size(230, 26);
             this.txtCarnet.TabIndex = 4;
             // 
-            // btnAgregar
+            // btnAgregarUsuario
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(55, 212);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(96, 41);
-            this.btnAgregar.TabIndex = 5;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(55, 212);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(96, 41);
+            this.btnAgregarUsuario.TabIndex = 5;
+            this.btnAgregarUsuario.Text = "Agregar";
+            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // btnEditar
             // 
@@ -134,32 +135,7 @@
             this.dgvUsuarios.RowTemplate.Height = 28;
             this.dgvUsuarios.Size = new System.Drawing.Size(518, 238);
             this.dgvUsuarios.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(626, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 46);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Usuarios más activos";
-            // 
-            // chartUsuarios
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartUsuarios.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartUsuarios.Legends.Add(legend1);
-            this.chartUsuarios.Location = new System.Drawing.Point(612, 143);
-            this.chartUsuarios.Name = "chartUsuarios";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartUsuarios.Series.Add(series1);
-            this.chartUsuarios.Size = new System.Drawing.Size(437, 276);
-            this.chartUsuarios.TabIndex = 10;
-            this.chartUsuarios.Text = "chart1";
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // colNombre
             // 
@@ -182,6 +158,32 @@
             this.colPrestamos.Name = "colPrestamos";
             this.colPrestamos.Width = 150;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label1.Location = new System.Drawing.Point(626, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(400, 46);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Usuarios más activos";
+            // 
+            // chartUsuarios
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartUsuarios.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartUsuarios.Legends.Add(legend2);
+            this.chartUsuarios.Location = new System.Drawing.Point(612, 143);
+            this.chartUsuarios.Name = "chartUsuarios";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartUsuarios.Series.Add(series2);
+            this.chartUsuarios.Size = new System.Drawing.Size(437, 276);
+            this.chartUsuarios.TabIndex = 10;
+            this.chartUsuarios.Text = "chart1";
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -192,7 +194,7 @@
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnAgregarUsuario);
             this.Controls.Add(this.txtCarnet);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblCarnet);
@@ -200,6 +202,7 @@
             this.Controls.Add(this.lblIntro);
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
+            this.Load += new System.EventHandler(this.FormUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -214,7 +217,7 @@
         private System.Windows.Forms.Label lblCarnet;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCarnet;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvUsuarios;
