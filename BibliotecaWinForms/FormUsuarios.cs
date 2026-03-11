@@ -85,6 +85,33 @@ namespace BibliotecaWinForms
             dgvUsuarios.ClearSelection();
         }
 
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        {
+            if (indiceSeleccionado < 0 || indiceSeleccionado >= DatosBiblioteca.contadorUsuarios)
+            {
+                MessageBox.Show("Seleccione un usuario para eliminar");
+                return;
+            }
+
+            var confirm = MessageBox.Show("¿Desea eliminar al usuario seleccionado?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm != DialogResult.Yes) return;
+
+            for (int i = indiceSeleccionado; i < DatosBiblioteca.contadorUsuarios - 1; i++)
+            {
+                DatosBiblioteca.usuarios[i] = DatosBiblioteca.usuarios[i + 1];
+            }
+
+            DatosBiblioteca.usuarios[DatosBiblioteca.contadorUsuarios - 1] = null;
+            DatosBiblioteca.contadorUsuarios--;
+
+            MostrarUsuarios();
+
+            txtNombre.Clear();
+            txtCarnet.Clear();
+            indiceSeleccionado = -1;
+            dgvUsuarios.ClearSelection();
+        }
+
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
