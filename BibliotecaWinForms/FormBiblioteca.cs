@@ -279,5 +279,12 @@ namespace BibliotecaWinForms
         {
             dgvLibros_CellClick(sender, e);
         }
+        private void btnOpenForm_Click(object sender, EventArgs e)
+        {
+            using (var f = new FormUsuarios())
+            {
+                f.ShowDialog(this);
+            }
+        }
     }
 }
