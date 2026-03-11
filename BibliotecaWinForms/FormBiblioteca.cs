@@ -15,10 +15,17 @@ namespace BibliotecaWinForms
 {
     public partial class FormBiblioteca : Form
     {
+        private ComboBox cmbUsuarios;
         int indiceSeleccionado = -1;
         public FormBiblioteca()
         {
             InitializeComponent();
+
+            cmbUsuarios = new ComboBox();
+            cmbUsuarios.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUsuarios.Location = new Point(10, 10);
+            cmbUsuarios.Width = 200;
+            this.Controls.Add(cmbUsuarios);
 
             btnEditar.Click += btnEditar_Click;
             btnEliminar.Click += btnEliminar_Click;
@@ -115,6 +122,10 @@ namespace BibliotecaWinForms
 
         private void FormBiblioteca_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i < DatosBiblioteca.contadorUsuarios; i++)
+            {
+                cmbUsuarios.Items.Add(DatosBiblioteca.usuarios[i].Nombre);
+            }
             MostrarLibros();
         }
 
@@ -190,28 +201,27 @@ namespace BibliotecaWinForms
 
         private void btnPrestamo_Click(object sender, EventArgs e)
         {
-            int idx = ObtenerIndiceSeleccionadoSeguro();
-
-            if (idx < 0 || DatosBiblioteca.libros[idx] == null)
+            if (indiceSeleccionado == -1)
             {
                 MessageBox.Show("Seleccione un libro");
                 return;
             }
 
-            DatosBiblioteca.libros[idx].VecesPrestado++;
+            if (cmbUsuarios.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un usuario");
+                return;
+            }
+
+            int usuarioIndex = cmbUsuarios.SelectedIndex;
+
+            DatosBiblioteca.libros[indiceSeleccionado].VecesPrestado++;
+            DatosBiblioteca.usuarios[usuarioIndex].PrestamosRealizados++;
 
             MostrarLibros();
 
-            if (idx >= 0 && idx < dgvLibros.Rows.Count)
-            {
-                dgvLibros.ClearSelection();
-                dgvLibros.Rows[idx].Selected = true;
-                indiceSeleccionado = idx;
-            }
-
             MessageBox.Show("Préstamo registrado");
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int idx = ObtenerIndiceSeleccionadoSeguro();

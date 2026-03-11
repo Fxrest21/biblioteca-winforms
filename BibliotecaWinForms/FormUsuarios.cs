@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace BibliotecaWinForms
 {
@@ -33,10 +32,7 @@ namespace BibliotecaWinForms
                     DatosBiblioteca.usuarios[i].PrestamosRealizados
                 );
             }
-
-            UpdateChartUsuarios();
         }
-
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
             MostrarUsuarios();
@@ -89,7 +85,7 @@ namespace BibliotecaWinForms
             dgvUsuarios.ClearSelection();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             if (indiceSeleccionado < 0 || indiceSeleccionado >= DatosBiblioteca.contadorUsuarios)
             {
@@ -116,11 +112,6 @@ namespace BibliotecaWinForms
             dgvUsuarios.ClearSelection();
         }
 
-        private void btnEliminarUsuario_Click(object sender, EventArgs e)
-        {
-            btnEliminar_Click(sender, e);
-        }
-
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -129,47 +120,6 @@ namespace BibliotecaWinForms
 
             txtNombre.Text = DatosBiblioteca.usuarios[indiceSeleccionado].Nombre;
             txtCarnet.Text = DatosBiblioteca.usuarios[indiceSeleccionado].Carnet;
-        }
-
-        private void UpdateChartUsuarios(int top = 5)
-        {
-            if (chartUsuarios.ChartAreas.Count == 0)
-            {
-                chartUsuarios.ChartAreas.Add(new ChartArea("ChartArea1"));
-            }
-
-            chartUsuarios.Series.Clear();
-            var serie = new Series("Usuarios")
-            {
-                ChartType = SeriesChartType.Column,
-                XValueType = ChartValueType.String
-            };
-            chartUsuarios.Series.Add(serie);
-
-            var usuarios = DatosBiblioteca.usuarios
-                .Take(DatosBiblioteca.contadorUsuarios)
-                .Where(u => u != null)
-                .OrderByDescending(u => u.PrestamosRealizados)
-                .Take(top)
-                .ToList();
-
-            if (!usuarios.Any())
-            {
-                chartUsuarios.Invalidate();
-                return;
-            }
-
-            foreach (var u in usuarios)
-            {
-                int idx = serie.Points.AddXY(u.Nombre, u.PrestamosRealizados);
-                serie.Points[idx].ToolTip = $"{u.Nombre}: {u.PrestamosRealizados}";
-                serie.Points[idx].Label = u.PrestamosRealizados.ToString();
-            }
-
-            chartUsuarios.ChartAreas[0].AxisX.Interval = 1;
-            chartUsuarios.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
-
-            chartUsuarios.Invalidate();
         }
 
     }
