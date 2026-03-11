@@ -23,9 +23,9 @@ namespace BibliotecaWinForms
             btnEditar.Click += btnEditar_Click;
             btnEliminar.Click += btnEliminar_Click;
             btnPrestamo.Click += btnPrestamo_Click;
+            btnOpenForm.Click += btnOpenForm_Click;
             dgvLibros.CellClick += dgvLibros_CellClick;
             dgvLibros.CellContentClick += dgvLibros_CellContentClick;
-
             dgvLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLibros.MultiSelect = false;
             dgvLibros.AllowUserToAddRows = false;
