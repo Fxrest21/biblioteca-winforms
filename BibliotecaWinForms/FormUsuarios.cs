@@ -34,7 +34,6 @@ namespace BibliotecaWinForms
                 );
             }
 
-            // Actualiza el chart cada vez que se muestra la lista
             UpdateChartUsuarios();
         }
 
@@ -115,6 +114,11 @@ namespace BibliotecaWinForms
             txtCarnet.Clear();
             indiceSeleccionado = -1;
             dgvUsuarios.ClearSelection();
+        }
+
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        {
+            btnEliminar_Click(sender, e);
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
