@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaWinForms.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,24 +13,24 @@ namespace BibliotecaWinForms
 {
     public partial class FormUsuarios : Form
     {
+        int indiceSeleccionado = -1;
         public FormUsuarios()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void MostrarUsuarios()
         {
+            dgvUsuarios.Rows.Clear();
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormUsuarios_Load(object sender, EventArgs e)
-        {
-
+            for (int i = 0; i < DatosBiblioteca.contadorUsuarios; i++)
+            {
+                dgvUsuarios.Rows.Add(
+                    DatosBiblioteca.usuarios[i].Nombre,
+                    DatosBiblioteca.usuarios[i].Carnet,
+                    DatosBiblioteca.usuarios[i].PrestamosRealizados
+                );
+            }
         }
     }
 }

@@ -110,7 +110,6 @@
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEliminar
             // 
@@ -145,7 +144,6 @@
             this.label1.Size = new System.Drawing.Size(400, 46);
             this.label1.TabIndex = 9;
             this.label1.Text = "Usuarios más activos";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // chartUsuarios
             // 
@@ -202,7 +200,6 @@
             this.Controls.Add(this.lblIntro);
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
-            this.Load += new System.EventHandler(this.FormUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuarios)).EndInit();
             this.ResumeLayout(false);
