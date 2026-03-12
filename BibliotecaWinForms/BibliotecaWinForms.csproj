@@ -54,6 +54,12 @@
     <Compile Include="FormBiblioteca.Designer.cs">
       <DependentUpon>FormBiblioteca.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrestamo.Designer.cs">
+      <DependentUpon>FormPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBiblioteca.resx">
       <DependentUpon>FormBiblioteca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrestamo.resx">
+      <DependentUpon>FormPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>

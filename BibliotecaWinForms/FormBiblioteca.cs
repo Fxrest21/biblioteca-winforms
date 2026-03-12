@@ -189,26 +189,8 @@ namespace BibliotecaWinForms
 
         private void btnPrestamo_Click(object sender, EventArgs e)
         {
-            int idx = ObtenerIndiceSeleccionadoSeguro();
-
-            if (idx < 0 || DatosBiblioteca.libros[idx] == null)
-            {
-                MessageBox.Show("Seleccione un libro");
-                return;
-            }
-
-            DatosBiblioteca.libros[idx].VecesPrestado++;
-
-            MostrarLibros();
-
-            if (idx >= 0 && idx < dgvLibros.Rows.Count)
-            {
-                dgvLibros.ClearSelection();
-                dgvLibros.Rows[idx].Selected = true;
-                indiceSeleccionado = idx;
-            }
-
-            MessageBox.Show("Préstamo registrado");
+            FormPrestamo form = new FormPrestamo();
+            form.Show();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -285,5 +267,7 @@ namespace BibliotecaWinForms
                 f.ShowDialog(this);
             }
         }
+
+        
     }
 }
