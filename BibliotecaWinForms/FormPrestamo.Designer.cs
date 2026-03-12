@@ -38,6 +38,7 @@
             // 
             // cmbUsuario
             // 
+            this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUsuario.FormattingEnabled = true;
             this.cmbUsuario.Location = new System.Drawing.Point(101, 126);
             this.cmbUsuario.Name = "cmbUsuario";
@@ -103,6 +104,7 @@
             this.Controls.Add(this.cmbUsuario);
             this.Name = "FormPrestamo";
             this.Text = "FormPrestamo";
+            this.Load += new System.EventHandler(this.FormPrestamo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
