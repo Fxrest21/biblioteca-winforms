@@ -90,6 +90,7 @@
             this.btnRegistrarPrestamo.Text = "Registrar";
             this.btnRegistrarPrestamo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrarPrestamo.UseVisualStyleBackColor = false;
+            this.btnRegistrarPrestamo.Click += new System.EventHandler(this.btnRegistrarPrestamo_Click);
             // 
             // FormPrestamo
             // 

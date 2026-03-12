@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BibliotecaWinForms.Datos;
+using BibliotecaWinForms.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BibliotecaWinForms.Datos;
 namespace BibliotecaWinForms
 {
     public partial class FormPrestamo : Form
@@ -49,6 +50,27 @@ namespace BibliotecaWinForms
             }
 
             if (cmbLibros.Items.Count > 0) cmbLibros.SelectedIndex = -1;
+        }
+
+        private void btnRegistrarPrestamo_Click(object sender, EventArgs e)
+        {
+            if (cmbUsuario.SelectedIndex == -1 || cmbLibros.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione usuario y libro");
+                return;
+            }
+
+            string usuario = cmbUsuario.SelectedItem.ToString();
+            string libro = cmbLibros.SelectedItem.ToString();
+
+            Prestamo nuevo = new Prestamo(usuario, libro);
+
+            DatosBiblioteca.prestamos[DatosBiblioteca.contadorPrestamos] = nuevo;
+            DatosBiblioteca.contadorPrestamos++;
+
+            MessageBox.Show("Préstamo registrado correctamente");
+
+            this.Close();
         }
     }
 }
