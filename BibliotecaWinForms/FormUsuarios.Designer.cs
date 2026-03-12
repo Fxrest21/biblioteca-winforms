@@ -48,11 +48,11 @@
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.charUsuario = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIntro
@@ -212,22 +212,22 @@
             this.colFecha.Name = "colFecha";
             this.colFecha.Width = 150;
             // 
-            // chart1
+            // charUsuario
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.charUsuario.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(700, 142);
-            this.chart1.Name = "chart1";
+            this.charUsuario.Legends.Add(legend1);
+            this.charUsuario.Location = new System.Drawing.Point(700, 142);
+            this.charUsuario.Name = "charUsuario";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(459, 262);
-            this.chart1.TabIndex = 12;
-            this.chart1.Text = "chartUsuario";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            this.charUsuario.Series.Add(series1);
+            this.charUsuario.Size = new System.Drawing.Size(459, 262);
+            this.charUsuario.TabIndex = 12;
+            this.charUsuario.Text = "Usuarios";
+            this.charUsuario.Click += new System.EventHandler(this.chart1_Click);
             // 
             // label1
             // 
@@ -245,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 912);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.charUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.dgvUsuarios);
@@ -262,7 +262,7 @@
             this.Load += new System.EventHandler(this.FormUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,7 +287,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLibro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart charUsuario;
         private System.Windows.Forms.Label label1;
     }
 }

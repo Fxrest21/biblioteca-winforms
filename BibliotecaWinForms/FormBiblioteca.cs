@@ -69,52 +69,25 @@ namespace BibliotecaWinForms
             indiceSeleccionado = -1;
             dgvLibros.ClearSelection();
 
-            ActualizarChartMasPrestado();
+            ActualizarGraficaLibros();
         }
 
-        private void ActualizarChartMasPrestado()
+        public void ActualizarGraficaLibros()
         {
-            chartLibros.Series.Clear();
-            var series = new Series("MasPrestados")
+            chartLibros.Series[0].Points.Clear();
+
+            for (int i = 0; i < DatosBiblioteca.contadorLibros; i++)
             {
-                ChartType = SeriesChartType.Column,
-                XValueType = ChartValueType.String,
-                YValueType = ChartValueType.Int32
-            };
-            chartLibros.Series.Add(series);
-
-            if (chartLibros.ChartAreas.Count == 0)
-            {
-                chartLibros.ChartAreas.Add(new ChartArea("ChartArea1"));
-            }
-            chartLibros.ChartAreas[0].AxisX.Interval = 1;
-            chartLibros.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
-
-            var top = DatosBiblioteca.libros
-                .Take(DatosBiblioteca.contadorLibros)
-                .Where(b => b != null)
-                .OrderByDescending(b => b.VecesPrestado)
-                .Take(5)
-                .ToList();
-
-            chartLibros.Titles.Clear();
-            if (top.Count == 0 || top.All(b => b.VecesPrestado == 0))
-            {
-                chartLibros.Titles.Add("No hay préstamos registrados");
-                return;
-            }
-
-            chartLibros.Titles.Add("Libros más prestados");
-
-            foreach (var libro in top)
-            {
-                series.Points.AddXY(libro.Titulo, libro.VecesPrestado);
+                chartLibros.Series[0].Points.AddXY(
+                    DatosBiblioteca.libros[i].Titulo,
+                    DatosBiblioteca.libros[i].VecesPrestado
+                );
             }
         }
-
         private void FormBiblioteca_Load(object sender, EventArgs e)
         {
             MostrarLibros();
+            ActualizarGraficaLibros();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
