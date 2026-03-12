@@ -33,10 +33,23 @@ namespace BibliotecaWinForms
                 );
             }
         }
+        public void ActualizarGraficaUsuarios()
+        {
+            chartUsuarios.Series[0].Points.Clear();
+
+            for (int i = 0; i < DatosBiblioteca.contadorUsuarios; i++)
+            {
+                chartUsuarios.Series[0].Points.AddXY(
+                    DatosBiblioteca.usuarios[i].Nombre,
+                    DatosBiblioteca.usuarios[i].PrestamosRealizados
+                );
+            }
+        }
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
             MostrarUsuarios();
             MostrarPrestamos();
+            ActualizarGraficaUsuarios();
         }
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)

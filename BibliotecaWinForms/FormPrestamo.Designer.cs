@@ -47,6 +47,7 @@
             // 
             // cmbLibros
             // 
+            this.cmbLibros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLibros.FormattingEnabled = true;
             this.cmbLibros.Location = new System.Drawing.Point(101, 200);
             this.cmbLibros.Name = "cmbLibros";

@@ -117,6 +117,7 @@ namespace BibliotecaWinForms
             DatosBiblioteca.contadorLibros++;
 
             MostrarLibros();
+            ActualizarGraficaLibros();
         }
 
         private void dgvLibros_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -163,7 +164,9 @@ namespace BibliotecaWinForms
         private void btnPrestamo_Click(object sender, EventArgs e)
         {
             FormPrestamo form = new FormPrestamo();
-            form.Show();
+            form.ShowDialog();
+            MostrarLibros();
+            ActualizarGraficaLibros();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
