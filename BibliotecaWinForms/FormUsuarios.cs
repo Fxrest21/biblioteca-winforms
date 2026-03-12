@@ -135,6 +135,9 @@ namespace BibliotecaWinForms
             txtCarnet.Text = DatosBiblioteca.usuarios[indiceSeleccionado].Carnet;
         }
 
-        
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -60,15 +60,22 @@ namespace BibliotecaWinForms
                 return;
             }
 
-            string usuario = cmbUsuario.SelectedItem.ToString();
-            string libro = cmbLibros.SelectedItem.ToString();
+            int usuarioIndex = cmbUsuario.SelectedIndex;
+            int libroIndex = cmbLibros.SelectedIndex;
+
+            string usuario = DatosBiblioteca.usuarios[usuarioIndex].Nombre;
+            string libro = DatosBiblioteca.libros[libroIndex].Titulo;
 
             Prestamo nuevo = new Prestamo(usuario, libro);
 
             DatosBiblioteca.prestamos[DatosBiblioteca.contadorPrestamos] = nuevo;
             DatosBiblioteca.contadorPrestamos++;
 
-            MessageBox.Show("Préstamo registrado correctamente");
+            // ACTUALIZAR ESTADÍSTICAS
+            DatosBiblioteca.libros[libroIndex].VecesPrestado++;
+            DatosBiblioteca.usuarios[usuarioIndex].PrestamosRealizados++;
+
+            MessageBox.Show("Préstamo registrado");
 
             this.Close();
         }
