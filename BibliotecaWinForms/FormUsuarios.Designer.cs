@@ -40,10 +40,13 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarnet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrestamos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIntro
@@ -157,15 +160,20 @@
             this.colPrestamos.Name = "colPrestamos";
             this.colPrestamos.Width = 150;
             // 
-            // dataGridView1
+            // dgvPrestamos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 634);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 252);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvPrestamos.AllowUserToAddRows = false;
+            this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colUsuario,
+            this.colLibro,
+            this.colFecha});
+            this.dgvPrestamos.Location = new System.Drawing.Point(55, 634);
+            this.dgvPrestamos.Name = "dgvPrestamos";
+            this.dgvPrestamos.RowHeadersWidth = 62;
+            this.dgvPrestamos.RowTemplate.Height = 28;
+            this.dgvPrestamos.Size = new System.Drawing.Size(518, 252);
+            this.dgvPrestamos.TabIndex = 9;
             // 
             // label2
             // 
@@ -177,13 +185,34 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Registro de préstamos";
             // 
+            // colUsuario
+            // 
+            this.colUsuario.HeaderText = "Usuario";
+            this.colUsuario.MinimumWidth = 8;
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.Width = 150;
+            // 
+            // colLibro
+            // 
+            this.colLibro.HeaderText = "Libro";
+            this.colLibro.MinimumWidth = 8;
+            this.colLibro.Name = "colLibro";
+            this.colLibro.Width = 150;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.MinimumWidth = 8;
+            this.colFecha.Name = "colFecha";
+            this.colFecha.Width = 150;
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 912);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -197,7 +226,7 @@
             this.Text = "FormUsuarios";
             this.Load += new System.EventHandler(this.FormUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +246,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCarnet;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrestamos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPrestamos;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLibro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
     }
 }

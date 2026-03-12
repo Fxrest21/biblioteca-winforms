@@ -36,6 +36,7 @@ namespace BibliotecaWinForms
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
             MostrarUsuarios();
+            MostrarPrestamos();
         }
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
@@ -111,7 +112,19 @@ namespace BibliotecaWinForms
             indiceSeleccionado = -1;
             dgvUsuarios.ClearSelection();
         }
+        public void MostrarPrestamos()
+        {
+            dgvPrestamos.Rows.Clear();
 
+            for (int i = 0; i < DatosBiblioteca.contadorPrestamos; i++)
+            {
+                dgvPrestamos.Rows.Add(
+                    DatosBiblioteca.prestamos[i].Usuario,
+                    DatosBiblioteca.prestamos[i].Libro,
+                    DatosBiblioteca.prestamos[i].Fecha.ToString("dd/MM/yyyy HH:mm")
+                );
+            }
+        }
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
