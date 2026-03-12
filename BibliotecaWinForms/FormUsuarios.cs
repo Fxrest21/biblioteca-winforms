@@ -122,5 +122,6 @@ namespace BibliotecaWinForms
             txtCarnet.Text = DatosBiblioteca.usuarios[indiceSeleccionado].Carnet;
         }
 
+        
     }
 }

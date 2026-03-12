@@ -40,18 +40,21 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarnet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrestamos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIntro
             // 
             this.lblIntro.AutoSize = true;
             this.lblIntro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblIntro.Location = new System.Drawing.Point(234, 9);
+            this.lblIntro.Location = new System.Drawing.Point(332, 19);
             this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(229, 46);
+            this.lblIntro.Size = new System.Drawing.Size(330, 46);
             this.lblIntro.TabIndex = 0;
-            this.lblIntro.Text = "USUARIOS";
+            this.lblIntro.Text = "Registrar Usuario";
             // 
             // lblNombre
             // 
@@ -154,11 +157,33 @@
             this.colPrestamos.Name = "colPrestamos";
             this.colPrestamos.Width = 150;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(55, 634);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(518, 252);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.Location = new System.Drawing.Point(60, 575);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(313, 36);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Registro de préstamos";
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 577);
+            this.ClientSize = new System.Drawing.Size(1304, 912);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -172,6 +197,7 @@
             this.Text = "FormUsuarios";
             this.Load += new System.EventHandler(this.FormUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +217,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCarnet;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrestamos;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
     }
 }

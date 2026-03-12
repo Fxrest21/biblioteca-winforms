@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BibliotecaWinForms.Modelos
 {
-    internal class Prestamo
+    public class Prestamo
     {
-        public int Id { get; set; }
-        public int IdLibro { get; set; }
-        public int IdUsuario { get; set; }
-        public DateTime FechaPrestamo { get; set; }
+        public string Usuario { get; set; }
+        public string Libro { get; set; }
+        public DateTime Fecha { get; set; }
 
-        public Prestamo(int id, int libro, int usuario)
-            {
-            Id = id;
-            IdLibro = libro;
-            IdUsuario = usuario; 
-            FechaPrestamo = DateTime.Now;
-
+        public Prestamo(string usuario, string libro)
+        {
+            Usuario = usuario;
+            Libro = libro;
+            Fecha = DateTime.Now;
         }
     }
 }
