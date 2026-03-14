@@ -12,3 +12,5 @@ Tecnologías utilizadas:
 - CRUD de Usuarios
 - Registro de préstamos
 - Estadisticas con gráficas
+
+Realizada por Daniela Fernanda Tamayo Jovel
