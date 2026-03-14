@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +47,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Datos\DatosBiblioteca.cs" />
+    <Compile Include="FormBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormBiblioteca.Designer.cs">
+      <DependentUpon>FormBiblioteca.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrestamo.Designer.cs">
+      <DependentUpon>FormPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuarios.Designer.cs">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Libro.cs" />
+    <Compile Include="Modelos\Prestamo.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormBiblioteca.resx">
+      <DependentUpon>FormBiblioteca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrestamo.resx">
+      <DependentUpon>FormPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ejecutable\BibliotecaWinForms.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
